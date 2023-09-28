@@ -1,0 +1,33 @@
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+server:
+  port: 8070
+
+spring:
+  application:
+    name: schools
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DB:schools}
+    username: ${MYSQL_USER:supun}
+    password: ${MYSQL_PASSWORD:Arduino@123}
+
+  #    driver-class-name: org.postgresql.Driver
+  #    url: jdbc:postgresql://localhost:5432/students
+  #    username: username
+  #    password: password
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+application:
+  config:
+    students-url: http://localhost:8222/api/v1/students

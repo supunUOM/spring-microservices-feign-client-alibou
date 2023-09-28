@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "29b1fa14-1dae-427e-90c0-2f1a20bc84b8",
+		"name": "Spring-Micro-alibou",
+		"description": "Spring boot microservices with FeignClient",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "10644944"
+	},
+	"item": [
+		{
+			"name": "saveStudent",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\": \"{{$randomFirstName}}\",\r\n    \"lastname\": \"{{$randomLastName}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"schoolId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8090/api/v1/students"
+			},
+			"response": []
+		},
+		{
+			"name": "saveStudent-GW",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\": \"{{$randomFirstName}}\",\r\n    \"lastname\": \"{{$randomLastName}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"schoolId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8222/api/v1/students"
+			},
+			"response": []
+		},
+		{
+			"name": "saveSchool",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"school 2\",\r\n    \"email\": \"{{$randomEmail}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8070/api/v1/schools"
+			},
+			"response": []
+		},
+		{
+			"name": "saveSchool-GW",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"school 1\",\r\n    \"email\": \"{{$randomEmail}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8222/api/v1/schools"
+			},
+			"response": []
+		},
+		{
+			"name": "getSchoolWithStudents",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8070/api/v1/schools/with-students/1"
+			},
+			"response": []
+		},
+		{
+			"name": "getSchoolWithStudents-GW",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8222/api/v1/schools/with-students/1"
+			},
+			"response": []
+		}
+	]
+}
